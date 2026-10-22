@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সৈয়দপুর সূফী নূর মোহাম্মদীয়া ছিদ্দিকীয়া দাখিল মাদ্রাসা</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hind Siliguri', sans-serif; }
+        body { background-color: #f0fdf4; color: #1e293b; min-height: 100vh; display: flex; flex-direction: column; }
+
+        header {
+            background: linear-gradient(135deg, #065f46, #047857);
+            color: white; padding: 15px; text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); border-bottom: 4px solid #fbbf24;
+        }
+        header h1 { font-size: 1.2rem; font-weight: 700; margin-bottom: 3px; }
+        header p { font-size: 0.8rem; color: #fef08a; }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 12px; flex-grow: 1; width: 100%; }
+
+        .slider-container {
+            position: relative; width: 100%; height: 180px; overflow: hidden;
+            border-radius: 14px; box-shadow: 0 6px 18px rgba(6, 95, 70, 0.2);
+            border: 2px solid #a7f3d0; margin-bottom: 12px; background: #065f46;
+        }
+        .slide-img {
+            width: 100%; height: 100%; object-fit: cover;
+            display: none; transition: opacity 0.8s ease-in-out;
+        }
+        .slide-img.active { display: block; }
+        .slider-caption {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: rgba(6, 95, 70, 0.85); color: white;
+            padding: 8px 12px; font-size: 0.85rem; font-weight: bold;
+            border-top: 2px solid #fbbf24;
+        }
+
+        .notice-board {
+            background: #ffffff; border-radius: 10px; padding: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05); border: 1px solid #cbd5e1;
+            border-left: 5px solid #dc2626; margin-bottom: 15px;
+        }
+        .notice-header { font-size: 0.85rem; font-weight: bold; color: #dc2626; margin-bottom: 4px; display: flex; align-items: center; gap: 5px; }
+        .notice-content { font-size: 0.9rem; color: #334155; font-weight: 600; }
+
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 15px; }
+        .card { background: white; border-radius: 14px; padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 1.2rem; font-weight: bold; }
+        .card-student { border-top: 4px solid #2563eb; }
+        .card-teacher { border-top: 4px solid #059669; }
+        .card-admin { border-top: 4px solid #7c3aed; }
+        .card-super { border-top: 4px solid #d97706; background: #fffbeb; }
+
+        .btn { width: 100%; padding: 8px 10px; border: none; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .btn-blue { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .btn-green { background: linear-gradient(135deg, #059669, #047857); }
+        .btn-purple { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        .btn-orange { background: linear-gradient(135deg, #d97706, #b45309); }
+        .btn-red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .btn-sm { padding: 4px 8px; font-size: 0.75rem; width: auto; }
+
+        .panel-box { background: white; border-radius: 14px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; margin-bottom: 15px; }
+        .panel-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 2px solid #f1f5f9; text-align: center; }
+
+        .form-group { margin-bottom: 8px; text-align: left; }
+        .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: #334155; margin-bottom: 2px; }
+        .form-control { width: 100%; padding: 7px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; outline: none; background: #f8fafc; }
+
+        .hidden { display: none !important; }
+        .section-title { font-size: 0.95rem; font-weight: 700; color: #475569; margin: 12px 0 6px; border-left: 3px solid #059669; padding-left: 6px; }
+
+        .tab-menu { display: flex; gap: 5px; margin-bottom: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; overflow-x: auto; }
+        .tab-btn { background: #e2e8f0; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: bold; cursor: pointer; white-space: nowrap; color: #334155; }
+        .tab-btn.active { background: #059669; color: white; }
+
+        .khata-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.8rem; background: white; }
+        .khata-table th, .khata-table td { border: 1px solid #cbd5e1; padding: 7px; text-align: center; }
+        .khata-table th { background: #065f46; color: white; }
+        .khata-table tr:nth-child(even) { background: #f8fafc; }
+
+        .notice-card { background: #f8fafc; border-left: 4px solid #2563eb; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
+
+        .id-card {
+            width: 300px; margin: 10px auto; background: #fff; border-radius: 12px;
+            border: 2px solid #065f46; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; font-size: 0.8rem;
+        }
+        .id-card-header { background: #065f46; color: white; padding: 8px; text-align: center; }
+        .id-card-body { padding: 12px; text-align: center; }
+        .id-photo { width: 70px; height: 70px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+
+        @media print {
+            body * { visibility: hidden; }
+            #printable-area, #printable-area * { visibility: visible; }
+            #printable-area { position: absolute; left: 0; top: 0; width: 100%; }
+        }
+
+        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 10px; font-size: 0.75rem; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🕌 সৈয়দপুর সূফী নূর মোহাম্মদীয়া ছিদ্দিকীয়া দাখিল মাদ্রাসা</h1>
+        <p>📍 মিঠানালা, মিরসরাই, চট্টগ্রাম।</p>
+    </header>
+
+    <div class="container">
+
+        <!-- ================= HOME PAGE ================= -->
+        <div id="home-page">
+            <div class="slider-container" id="slider-box">
+                <div class="slider-caption">স্বাগতম - ডিজিটাল মাদ্রাসা ম্যানেজমেন্ট সিস্টেম</div>
+            </div>
+
+            <div class="notice-board">
+                <div class="notice-header">📢 জরুরি নোটিশ বোর্ড</div>
+                <div class="notice-content" id="notice-text">লোড হচ্ছে...</div>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card card-super">
+                    <div>
+                        <div class="card-icon" style="background:#fef3c7; color:#d97706;">👑</div>
+                        <h2>সুপারিন্টেন্ডেন্ট</h2>
+                        <p>সর্বময় ক্ষমতার অধিকারী প্রধান প্যানেল।</p>
+                    </div>
+                    <button onclick="showPage('super-login-page')" class="btn btn-orange">প্রধান প্রবেশ</button>
+                </div>
+
+                <div class="card card-admin">
+                    <div>
+                        <div class="card-icon" style="background:#f3e8ff; color:#7c3aed;">⚙️</div>
+                        <h2>এডমিন প্যানেল</h2>
+                        <p>শিক্ষার্থী, নোটিশ ও ব্যাকআপ।</p>
+                    </div>
+                    <button onclick="showPage('admin-login-page')" class="btn btn-purple">এডমিন প্রবেশ</button>
+                </div>
+
+                <div class="card card-teacher">
+                    <div>
+                        <div class="card-icon" style="background:#d1fae5; color:#059669;">👨‍🏫</div>
+                        <h2>শিক্ষক প্যানেল</h2>
+                        <p>হাজিরা খাতা, ডায়রি ও নম্বর এন্ট্রি।</p>
+                    </div>
+                    <button onclick="showPage('teacher-login-page')" class="btn btn-green">লগইন করুন</button>
+                </div>
+
+                <div class="card card-student">
+                    <div>
+                        <div class="card-icon" style="background:#dbeafe; color:#2563eb;">🎓</div>
+                        <h2>শিক্ষার্থী / অভিভাবক</h2>
+                        <p>হাজিরা, বেতন, মার্কসিট ও আইডি কার্ড।</p>
+                    </div>
+                    <button onclick="showPage('student-login-page')" class="btn btn-blue">প্রবেশ করুন</button>
+                </div>
+            </div>
+
+            <h3 class="section-title">📌 সকল নোটিশ ও আর্কাইভ</h3>
+            <div id="public-notice-list"></div>
+        </div>
+
+        <!-- ================= LOGINS & FORGOT PASSWORDS ================= -->
+        <div id="student-login-page" class="panel-box hidden" style="max-width: 380px; margin: 15px auto;">
+            <div class="panel-title" style="color: #1d4ed8;">🎓 শিক্ষার্থী প্রবেশ</div>
+            <form onsubmit="handleStudentLogin(event)">
+                <div class="form-group">
+                    <label>শ্রেণি নির্বাচন করুন</label>
+                    <select id="std-login-class" class="form-control" required>
+                        <option value="">-- শ্রেণি বেছে নিন --</option>
+                        <option value="১ম">১ম শ্রেণি</option><option value="২য়">২য় শ্রেণি</option><option value="৩য়">৩য় শ্রেণি</option><option value="৪র্থ">৪র্থ শ্রেণি</option><option value="৫ম">৫ম শ্রেণি</option><option value="৬ষ্ঠ">৬ষ্ঠ শ্রেণি</option><option value="৭ম">৭ম শ্রেণি</option><option value="৮ম">৮ম শ্রেণি</option><option value="৯ম">৯ম শ্রেণি</option><option value="১০ম">১০ম শ্রেণি</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>শিক্ষার্থী আইডি (Student ID)</label>
+                    <input type="text" id="std-login-id" placeholder="উদাহরণ: 101" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-blue" style="margin-top: 8px;">প্রবেশ করুন</button>
+                <button type="button" onclick="showPage('home-page')" class="btn btn-red" style="margin-top: 6px;">ফিরে যান</button>
+            </form>
+        </div>
+
+        <div id="teacher-login-page" class="panel-box hidden" style="max-width: 380px; margin: 15px auto;">
+            <div class="panel-title" style="color: #047857;">👨‍🏫 শিক্ষক লগইন</div>
+            <form onsubmit="handleTeacherLogin(event)">
+                <div class="form-group"><label>শিক্ষক আইডি</label><input type="text" id="teacher-id" placeholder="T-101" class="form-control" required></div>
+                <div class="form-group"><label>পাসওয়ার্ড</label><input type="password" id="teacher-pass" placeholder="******" class="form-control" required></div>
+                <div style="text-align:right; margin-bottom:6px;"><a href="#" onclick="showPage('teacher-forgot-page')" style="font-size:0.75rem; color:#047857;">পাসওয়ার্ড ভুলে গেছেন?</a></div>
+                <button type="submit" class="btn btn-green">লগইন করুন</button>
+                <button type="button" onclick="showPage('home-page')" class="btn btn-red" style="margin-top: 6px;">ফিরে যান</button>
+            </form>
+        </div>
+
+        <div id="teacher-forgot-page" class="panel-box hidden" style="max-width: 380px; margin: 15px auto;">
+            <div class="panel-title" style="color: #047857;">🔑 শিক্ষক পাসওয়ার্ড রিসেট</div>
+            <form onsubmit="handleTeacherForgot(event)">
+                <div class="form-group"><label>শিক্ষক আইডি</label><input type="text" id="t-reset-id" class="form-control" required></div>
+                <div class="form-group"><label>মোবাইল নম্বর</label><input type="text" id="t-reset-phone" class="form-control" required></div>
+                <div class="form-group"><label>নতুন পাসওয়ার্ড</label><input type="password" id="t-reset-newpass" class="form-control" required></div>
+                <button type="submit" class="btn btn-green">রিসেট করুন</button>
+                <button type="button" onclick="showPage('teacher-login-page')" class="btn btn-red" style="margin-top: 6px;">বাতিল</button>
+            </form>
+        </div>
+
+        <div id="admin-login-page" class="panel-box hidden" style="max-width: 380px; margin: 15px auto;">
+            <div class="panel-title" style="color: #6d28d9;">⚙️ এডমিন লগইন</div>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="form-group"><label>এডমিন আইডি</label><input type="text" id="admin-id" placeholder="admin" class="form-control" required></div>
+                <div class="form-group"><label>পাসওয়ার্ড</label><input type="password" id="admin-pass" placeholder="1234" class="form-control" required></div>
+                <div style="text-align:right; margin-bottom:6px;"><a href="#" onclick="showPage('admin-forgot-page')" style="font-size:0.75rem; color:#6d28d9;">পাসওয়ার্ড ভুলে গেছেন?</a></div>
+                <button type="submit" class="btn btn-purple">প্রবেশ করুন</button>
+                <button type="button" onclick="showPage('home-page')" class="btn btn-red" style="margin-top: 6px;">ফিরে যান</button>
+            </form>
+        </div>
+
+        <div id="admin-forgot-page" class="panel-box hidden" style="max-width: 380px; margin: 15px auto;">
+            <div class="panel-title" style="color: #6d28d9;">🔐 এডমিন পাসওয়ার্ড রিসেট</div>
+            <form onsubmit="handleAdminForgot(event)">
+                <div class="form-group"><label>মাস্টার কোড (9999)</label><input type="password" id="admin-recovery-code" class="form-control" required></div>
+                <div class="form-group"><label>নতুন পাসওয়ার্ড</label><input type="password" id="admin-reset-pass" class="form-control" required></div>
+                <button type="submit" class="btn btn-purple">রিসেট করুন</button>
+                <button type="button" onclick="showPage('admin-login-page')" class="btn btn-red" style="margin-top: 6px;">বাতিল</button>
+            </form>
+        </div>
+
+        <div id="super-login-page" class="panel-box hidden" style="max-width: 380px; margin: 15px auto;">
+            <div class="panel-title" style="color: #d97706;">👑 সুপারিন্টেন্ডেন্ট লগইন</div>
+            <form onsubmit="handleSuperLogin(event)">
+                <div class="form-group"><label>সুপার আইডি</label><input type="text" id="super-id" placeholder="super" class="form-control" required></div>
+                <div class="form-group"><label>পাসওয়ার্ড</label><input type="password" id="super-pass" placeholder="1234" class="form-control" required></div>
+                <div style="text-align:right; margin-bottom:6px;"><a href="#" onclick="showPage('super-forgot-page')" style="font-size:0.75rem; color:#d97706;">পাসওয়ার্ড ভুলে গেছেন?</a></div>
+                <button type="submit" class="btn btn-orange">প্রধান হিসেবে প্রবেশ</button>
+                <button type="button" onclick="showPage('home-page')" class="btn btn-red" style="margin-top: 6px;">ফিরে যান</button>
+            </form>
+        </div>
+
+        <div id="super-forgot-page" class="panel-box hidden" style="max-width: 380px; margin: 15px auto;">
+            <div class="panel-title" style="color: #d97706;">🔑 সুপার পাসওয়ার্ড রিসেট</div>
+            <form onsubmit="handleSuperForgot(event)">
+                <div class="form-group"><label>মাস্টার কোড (9999)</label><input type="password" id="super-recovery-code" class="form-control" required></div>
+                <div class="form-group"><label>নতুন পাসওয়ার্ড</label><input type="password" id="super-reset-pass" class="form-control" required></div>
+                <button type="submit" class="btn btn-orange">রিসেট করুন</button>
+                <button type="button" onclick="showPage('super-login-page')" class="btn btn-red" style="margin-top: 6px;">বাতিল</button>
+            </form>
+        </div>
+
+        <!-- ================= STUDENT DASHBOARD ================= -->
+        <div id="student-dashboard" class="panel-box hidden">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:8px; margin-bottom:12px;">
+                <div>
+                    <h2 id="std-profile-name" style="color:#0f172a;">শিক্ষার্থীর নাম</h2>
+                    <p id="std-profile-info" style="font-size:0.8rem; color:#64748b;">শ্রেণি: - | রোল: -</p>
+                </div>
+                <button onclick="showPage('home-page')" class="btn btn-red btn-sm">লগআউট</button>
+            </div>
+
+            <div class="grid-cards">
+                <div style="background:#f0fdf4; padding:8px; border-radius:8px; border:1px solid #bbf7d0;">
+                    <h4 style="color:#166534; font-size:0.8rem;">✅ ডিজিটাল উপস্থিতি</h4>
+                    <p id="std-attendance-status" style="font-weight:bold; color:#15803d;">উপস্থিত</p>
+                </div>
+                <div style="background:#eff6ff; padding:8px; border-radius:8px; border:1px solid #bfdbfe;">
+                    <h4 style="color:#1e40af; font-size:0.8rem;">💳 বেতন ও ফি</h4>
+                    <p id="std-fee-status" style="font-weight:bold; color:#1d4ed8;">0 ৳</p>
+                </div>
+            </div>
+
+            <div id="printable-area">
+                <h3 class="section-title">📊 প্রাতিষ্ঠানিক মার্কসিট ও ফলাফল</h3>
+                <div id="std-marksheet-box" style="background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:12px; font-size:0.8rem;"></div>
+            </div>
+            <button onclick="window.print()" class="btn btn-green btn-sm" style="margin-bottom:12px;">🖨️ রেজাল্ট ডাউনলোড / প্রিন্ট করুন</button>
+
+            <h3 class="section-title">🪪 ডিজিটাল আইডেন্টিটি কার্ড</h3>
+            <div class="id-card">
+                <div class="id-card-header">
+                    <h4 style="font-size:0.75rem;">সূফী নূর মোহাম্মদীয়া ছিদ্দিকীয়া মাদ্রাসা</h4>
+                </div>
+                <div class="id-card-body">
+                    <div class="id-photo">🎓</div>
+                    <h3 id="idcard-name" style="color:#065f46;">-</h3>
+                    <p id="idcard-details" style="font-size:0.75rem; color:#475569;">শ্রেণি: - | আইডি: -</p>
+                    <p id="idcard-phone" style="font-size:0.7rem; color:#64748b; margin-top:4px;">মোবাইল: -</p>
+                </div>
+            </div>
+
+            <h3 class="section-title">📖 প্রতিদিনের ডায়েরি (১৫টি বিষয়)</h3>
+            <input type="date" id="std-diary-date" class="form-control" style="margin-bottom:10px;" onchange="renderStudentDiary()">
+            <div id="std-diary-list" class="grid-cards"></div>
+        </div>
+
+        <!-- ================= TEACHER DASHBOARD ================= -->
+        <div id="teacher-dashboard" class="panel-box hidden">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:8px; margin-bottom:10px;">
+                <div>
+                    <h2 id="teacher-profile-name" style="color:#047857;">শিক্ষক ড্যাশবোর্ড</h2>
+                    <p id="teacher-profile-info" style="font-size:0.8rem; color:#64748b;">আইডি: T-101</p>
+                </div>
+                <button onclick="showPage('home-page')" class="btn btn-red btn-sm">লগআউট</button>
+            </div>
+
+            <div class="tab-menu">
+                <button class="tab-btn active" onclick="switchTeacherTab('tab-attendance')">📘 ডিজিটাল হাজিরা খাতা</button>
+                <button class="tab-btn" onclick="switchTeacherTab('tab-result')">📝 রেজাল্ট ও মার্কসিট</button>
+                <button class="tab-btn" onclick="switchTeacherTab('tab-diary')">✏️ ডায়েরি ও হোমওয়ার্ক</button>
+                <button class="tab-btn" onclick="switchTeacherTab('tab-subjects')">📚 বিষয়ের নাম এডিট</button>
+            </div>
+
+            <div id="tab-attendance" class="teacher-tab-content">
+                <div style="background:#f0fdf4; padding:8px; border-radius:8px; border:1px solid #a7f3d0; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:0.8rem; font-weight:600;">শিক্ষকের নিজস্ব উপস্থিতি:</span>
+                    <button onclick="markTeacherSelfAttendance()" class="btn btn-green btn-sm">হাজিরা দিন</button>
+                </div>
+
+                <div class="form-group">
+                    <label>শ্রেণি নির্বাচন করুন:</label>
+                    <select id="teacher-class-select" class="form-control" onchange="updateTeacherClassView()">
+                        <option value="১ম">১ম শ্রেণি</option><option value="২য়">২য় শ্রেণি</option><option value="৩য়">৩য় শ্রেণি</option><option value="৪র্থ">৪র্থ শ্রেণি</option><option value="৫ম">৫ম শ্রেণি</option><option value="৬ষ্ঠ">৬ষ্ঠ শ্রেণি</option><option value="৭ম">৭ম শ্রেণি</option><option value="৮ম">৮ম শ্রেণি</option><option value="৯ম">৯ম শ্রেণি</option><option value="১০ম">১০ম শ্রেণি</option>
+                    </select>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="summary-mini"><span>মোট ছাত্র</span><b id="count-total">০</b></div>
+                    <div class="summary-mini"><span>উপস্থিত</span><b id="count-present" style="color:#059669;">০</b></div>
+                    <div class="summary-mini"><span>অনুপস্থিত</span><b id="count-absent" style="color:#dc2626;">০</b></div>
+                    <div class="summary-mini"><span>উপস্থিতি হার</span><b id="count-rate" style="color:#2563eb;">০%</b></div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <h3 class="section-title" style="margin:0;">📖 খাতা রেজিস্টার শিট</h3>
+                    <button onclick="markAllPresent()" class="btn btn-green btn-sm">⚡ সবাই উপস্থিত</button>
+                </div>
+
+                <div style="overflow-x:auto; margin-bottom:12px;">
+                    <table class="khata-table">
+                        <thead>
+                            <tr>
+                                <th>আইডি</th>
+                                <th>নাম</th>
+                                <th>হাজিরা (✓ / ✗)</th>
+                                <th>বেতন স্ট্যাটাস</th>
+                                <th>বেতন (৳)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teacher-khata-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="tab-result" class="teacher-tab-content hidden">
+                <h3 class="section-title">📝 ১৫টি বিষয়ের নম্বর এন্ট্রি</h3>
+                <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:12px;">
+                    <div class="form-group">
+                        <label>শিক্ষার্থী আইডি দিন:</label>
+                        <input type="text" id="res-std-id" placeholder="উদাহরণ: 101" class="form-control" onchange="loadStudentMarksForm()">
+                    </div>
+                    <div id="res-subjects-inputs" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:6px; margin-top:8px; max-height:220px; overflow-y:auto;"></div>
+                    <button onclick="saveStudentResult()" class="btn btn-blue btn-sm" style="margin-top:8px;">সম্পূর্ণ রেজাল্ট সেভ করুন</button>
+                </div>
+            </div>
+
+            <div id="tab-diary" class="teacher-tab-content hidden">
+                <h3 class="section-title">✏️ ১৫টি বিষয়ের ডায়রি আপডেট</h3>
+                <input type="date" id="teacher-diary-date" class="form-control" style="margin-bottom:8px;">
+                <div id="teacher-diary-inputs" class="grid-cards"></div>
+                <button onclick="saveTeacherDiary()" class="btn btn-purple" style="margin-top:8px;">ডায়রি সেভ করুন</button>
+            </div>
+
+            <div id="tab-subjects" class="teacher-tab-content hidden">
+                <h3 class="section-title">📚 ১৫টি বিষয়ের নাম পরিবর্তন</h3>
+                <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:12px;">
+                    <div id="teacher-subject-edit-list" class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));"></div>
+                    <button onclick="saveTeacherSubjects()" class="btn btn-green btn-sm" style="margin-top:6px;">বিষয়সমূহের নাম সেভ করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ADMIN DASHBOARD ================= -->
+        <div id="admin-dashboard" class="panel-box hidden">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:8px; margin-bottom:12px;">
+                <h2 style="color:#6d28d9;">⚙️ এডমিন প্যানেল</h2>
+                <button onclick="showPage('home-page')" class="btn btn-red btn-sm">লগআউট</button>
+            </div>
+
+            <h3 class="section-title">💾 ব্যাকআপ ও রিস্টোর সিস্টেম</h3>
+            <div style="background:#f3e8ff; border:1px solid #d8b4fe; padding:10px; border-radius:8px; margin-bottom:12px; display:flex; gap:8px; align-items:center;">
+                <button onclick="exportDataBackup()" class="btn btn-purple btn-sm">📥 ডাটা ব্যাকআপ ডাউনলোড</button>
+                <div>
+                    <label style="font-size:0.7rem; font-weight:bold; color:#6d28d9; display:block; margin-bottom:2px;">রিস্টোর ফাইল আপলোড:</label>
+                    <input type="file" id="restore-file-input" accept=".json" onchange="importDataRestore(event)" style="font-size:0.75rem;">
+                </div>
+            </div>
+
+            <h3 class="section-title">📊 ফলাফল প্রকাশ নিয়ন্ত্রণ</h3>
+            <div style="background:#f3e8ff; border:1px solid #d8b4fe; padding:10px; border-radius:8px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span style="font-size:0.85rem; font-weight:bold;">বর্তমান স্ট্যাটাস:</span>
+                    <span id="admin-result-status-text" style="font-weight:bold; color:#7c3aed;">অপ্রকাশিত</span>
+                </div>
+                <button onclick="toggleResultPublish()" id="admin-result-btn" class="btn btn-purple btn-sm">প্রকাশ করুন</button>
+            </div>
+
+            <h3 class="section-title">🖼️ গ্যালারি থেকে স্লাইডার ছবি আপলোড</h3>
+            <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:12px;">
+                <div class="form-group">
+                    <label>ছবি সিলেক্ট করুন:</label>
+                    <input type="file" id="slider-image-input" accept="image/*" multiple class="form-control" onchange="handleGalleryUpload(event)">
+                </div>
+                <button onclick="clearSliderImages()" class="btn btn-red btn-sm">সকল ছবি মুছে ফেলুন</button>
+            </div>
+
+            <h3 class="section-title">📢 নোটিশ ম্যানেজমেন্ট (পোস্ট, এডিট, ডিলিট)</h3>
+            <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:12px;">
+                <input type="hidden" id="edit-notice-id">
+                <div class="form-group"><label>নোটিশের বিবরণ:</label><input type="text" id="admin-notice-input" class="form-control" placeholder="এখানে নোটিশ লিখুন..." required></div>
+                <button type="submit" onclick="saveAdminNotice()" class="btn btn-purple btn-sm" id="notice-save-btn">নোটিশ পোস্ট করুন</button>
+            </div>
+            <div id="admin-notice-list" style="max-height:140px; overflow-y:auto; margin-bottom:12px;"></div>
+
+            <h3 class="section-title">🎓 শিক্ষার্থী এন্ট্রি ও পরিচালনা</h3>
+            <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:10px;">
+                <form onsubmit="adminAddStudent(event)">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+                        <input type="text" id="admin-std-name" placeholder="নাম" class="form-control" required>
+                        <input type="text" id="admin-std-id" placeholder="আইডি" class="form-control" required>
+                        <select id="admin-std-class" class="form-control" required>
+                            <option value="১ম">১ম শ্রেণি</option><option value="২য়">২য় শ্রেণি</option><option value="৩য়">৩য় শ্রেণি</option><option value="৪র্থ">৪র্থ শ্রেণি</option><option value="৫ম">৫ম শ্রেণি</option><option value="৬ষ্ঠ">৬ষ্ঠ শ্রেণি</option><option value="৭ম">৭ম শ্রেণি</option><option value="৮ম">৮ম শ্রেণি</option><option value="৯ম">৯ম শ্রেণি</option><option value="১০ম">১০ম শ্রেণি</option>
+                        </select>
+                        <input type="text" id="admin-std-guardian" placeholder="অভিভাবক" class="form-control" required>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px; margin-top:6px;">
+                        <input type="text" id="admin-std-phone" placeholder="মোবাইল" class="form-control" required>
+                        <input type="number" id="admin-std-feeamount" placeholder="মাসিক ফি (৳)" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-blue btn-sm" style="margin-top:6px;">শিক্ষার্থী যোগ করুন</button>
+                </form>
+            </div>
+            <div id="admin-student-list" style="max-height:150px; overflow-y:auto; margin-bottom:12px;"></div>
+        </div>
+
+        <!-- ================= SUPERINTENDENT DASHBOARD ================= -->
+        <div id="super-dashboard" class="panel-box hidden">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:8px; margin-bottom:12px;">
+                <h2 style="color:#d97706;">👑 সুপারিন্টেন্ডেন্ট প্রধান কন্ট্রোল প্যানেল</h2>
+                <button onclick="showPage('home-page')" class="btn btn-red btn-sm">লগআউট</button>
+            </div>
+
+            <div class="grid-cards" style="grid-template-columns: 1fr 1fr; gap:8px;">
+                <div style="background:#ecfdf5; border:1px solid #a7f3d0; padding:8px; border-radius:8px; text-align:center;">
+                    <div style="font-size:0.75rem; color:#047857; font-weight:bold;">💵 মোট আদায়কৃত ফি</div>
+                    <div style="font-size:1.1rem; color:#065f46; font-weight:bold;" id="super-total-paid">০ ৳</div>
+                </div>
+                <div style="background:#fef2f2; border:1px solid #fecaca; padding:8px; border-radius:8px; text-align:center;">
+                    <div style="font-size:0.75rem; color:#dc2626; font-weight:bold;">⚠️ মোট বকেয়া ফি</div>
+                    <div style="font-size:1.1rem; color:#b91c1c; font-weight:bold;" id="super-total-due">০ ৳</div>
+                </div>
+            </div>
+
+            <h3 class="section-title">📊 ফলাফল প্রকাশ নিয়ন্ত্রণ</h3>
+            <div style="background:#fffbeb; border:1px solid #fcd34d; padding:10px; border-radius:8px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span style="font-size:0.85rem; font-weight:bold;">বর্তমান অবস্থা:</span>
+                    <span id="super-result-status-text" style="font-weight:bold; color:#d97706;">অপ্রকাশিত</span>
+                </div>
+                <button onclick="toggleResultPublish()" id="super-result-btn" class="btn btn-orange btn-sm">প্রকাশ করুন</button>
+            </div>
+
+            <h3 class="section-title">📚 ১৫টি বিষয়ের নাম পরিবর্তন</h3>
+            <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:12px;">
+                <div id="super-subject-edit-list" class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));"></div>
+                <button onclick="saveSuperSubjects()" class="btn btn-green btn-sm" style="margin-top:6px;">বিষয়সমূহের নাম সংরক্ষণ করুন</button>
+            </div>
+
+            <h3 class="section-title">👨‍🏫 শিক্ষক এন্ট্রি ও পরিচালনা</h3>
+            <div style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1; margin-bottom:10px;">
+                <form onsubmit="superAddTeacher(event)">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+                        <input type="text" id="super-t-name" placeholder="নাম" class="form-control" required>
+                        <input type="text" id="super-t-id" placeholder="আইডি" class="form-control" required>
+                        <input type="text" id="super-t-phone" placeholder="মোবাইল" class="form-control" required>
+                        <input type="password" id="super-t-pass" placeholder="পাসওয়ার্ড" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-green btn-sm" style="margin-top:6px;">শিক্ষক যোগ করুন</button>
+                </form>
+            </div>
+            <div id="super-teacher-list" style="max-height:140px; overflow-y:auto; margin-bottom:12px;"></div>
+
+            <h3 class="section-title">🎓 সকল শিক্ষার্থী নিয়ন্ত্রণ ও ডিলিট</h3>
+            <div id="super-student-list" style="max-height:150px; overflow-y:auto; margin-bottom:12px;"></div>
+
+            <h3 class="section-title">📅 শিক্ষকদের উপস্থিতি লগ</h3>
+            <div id="super-teacher-log" style="max-height:100px; overflow-y:auto; background:#f8fafc; padding:6px; border-radius:6px; border:1px solid #cbd5e1;"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 সৈয়দপুর সূফী নূর মোহাম্মদীয়া ছিদ্দিকীয়া দাখিল মাদ্রাসা। সর্বস্বত্ব সংরক্ষিত।
+    </footer>
+
+    <script>
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxuxYo6gKfR6HBn48M6vWcBn9E3P-d9lsNik9TD_2f_o93u6JlXoPZ75nCQqu1DC09T/exec";
+
+        const defaultData = {
+            adminPass: "1234",
+            superPass: "1234",
+            adminMasterCode: "9999",
+            isResultPublished: false,
+            sliderImages: [
+                "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+            ],
+            notices: [
+                { id: 1, text: "বার্ষিক পরীক্ষার প্রস্তুতকরণ কাজ চলছে। শীঘ্রই ফলাফল প্রকাশ পাবে।", date: "২০২৬-১০-২২" }
+            ],
+            students: [
+                { id: "101", name: "মুহাম্মদ আব্দুল্লাহ", class: "১ম", guardian: "হাফেজ আহমদ", phone: "01811111111", attendance: "Present", feeStatus: "Paid", feeAmount: 500, marks: {} },
+                { id: "102", name: "ফাতিমা খাতুন", class: "১ম", guardian: "আব্দুর রহিম", phone: "01822222222", attendance: "Absent", feeStatus: "Unpaid", feeAmount: 600, marks: {} }
+            ],
+            teachers: [
+                { id: "T-101", name: "মাওলানা মোহাম্মদ আলী", phone: "01700000000", pass: "1234" }
+            ],
+            teacherLog: [],
+            subjects: ["কুরআন মাজীদ", "আকাইদ ও ফিকাহ", "আরবি ১ম", "আরবি ২য়", "বাংলা ১ম", "বাংলা ২য়", "ইংরেজি ১ম", "ইংরেজি ২য়", "গণিত", "সাধারণ বিজ্ঞান", "আইসিটি", "ইতিহাস", "ভূগোল", "পৌরনীতি", "কৃষি শিক্ষা"],
+            diaries: {}
+        };
+
+        let appData = defaultData;
+
+        async function initDB() {
+            try {
+                let response = await fetch(WEB_APP_URL);
+                let result = await response.json();
+                if(result && result.students) {
+                    appData = result;
+                } else {
+                    appData = defaultData;
+                    saveDB(appData);
+                }
+            } catch(e) {
+                console.log("Online fetch failed, using local fallback");
+                const local = localStorage.getItem('madrasa_db_v17');
+                if(local) appData = JSON.parse(local);
+            }
+            loadHomeNoticesAndSlider();
+        }
+
+        function getDB() {
+            return appData;
+        }
+
+        function saveDB(db) {
+            appData = db;
+            localStorage.setItem('madrasa_db_v17', JSON.stringify(db));
+            
+            fetch(WEB_APP_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(db)
+            }).then(() => {
+                console.log("Data synced to Google Sheet!");
+            }).catch(err => {
+                console.error("Sync error:", err);
+            });
+            
+            return true;
+        }
+
+        function exportDataBackup() {
+            const data = JSON.stringify(appData);
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'madrasa_backup_' + new Date().toISOString().slice(0,10) + '.json';
+            a.click();
+            alert('ব্যাকআপ ফাইল সফলভাবে ডাউনলোড হয়েছে!');
+        }
+
+        function importDataRestore(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if(parsed && parsed.students) {
+                        saveDB(parsed);
+                        alert('ডেটা সফলভাবে রিস্টোর ও শিটে সিংক করা হয়েছে! অ্যাপ রিলোড হচ্ছে।');
+                        location.reload();
+                    } else {
+                        alert('ফাইলটি সঠিক মাদ্রাসা ডাটা ফাইল নয়!');
+                    }
+                } catch(err) {
+                    alert('ক্ষতিগ্রস্ত বা ভুল ফাইল ফরম্যাট!');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function showPage(pageId) {
+            ['home-page', 'student-login-page', 'teacher-login-page', 'teacher-forgot-page', 'admin-login-page', 'admin-forgot-page', 'super-login-page', 'super-forgot-page', 'student-dashboard', 'teacher-dashboard', 'admin-dashboard', 'super-dashboard'].forEach(id => {
+                const el = document.getElementById(id);
+                if(el) el.classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+            
+            loadHomeNoticesAndSlider();
+            if(pageId === 'admin-dashboard') renderAdminDashboard();
+            if(pageId === 'super-dashboard') renderSuperDashboard();
+            if(pageId === 'teacher-dashboard') {
+                updateTeacherClassView();
+                buildResultFormSubjects();
+                buildTeacherSubjectEditForm();
+            }
+        }
+
+        let currentSlideIdx = 0;
+        let slideInterval = null;
+
+        function loadHomeNoticesAndSlider() {
+            const db = getDB();
+            if (db.notices && db.notices.length) {
+                document.getElementById('notice-text').innerText = db.notices[0].text;
+                document.getElementById('public-notice-list').innerHTML = db.notices.map(n => `
+                    <div class="notice-card">
+                        <div>
+                            <div style="font-weight:bold; color:#1d4ed8;">📌 ${n.text}</div>
+                            <div style="font-size:0.7rem; color:gray;">তারিখ: ${n.date}</div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                document.getElementById('notice-text').innerText = 'বর্তমানে কোনো নোটিশ নেই।';
+                document.getElementById('public-notice-list').innerHTML = '';
+            }
+
+            const sliderBox = document.getElementById('slider-box');
+            const images = db.sliderImages && db.sliderImages.length ? db.sliderImages : defaultData.sliderImages;
+
+            sliderBox.innerHTML = images.map((img, idx) => `
+                <img src="${img}" class="slide-img ${idx===0?'active':''}">
+            `).join('') + `<div class="slider-caption">স্বাগতম - ডিজিটাল মাদ্রাসা ম্যানেজমেন্ট সিস্টেম</div>`;
+
+            if(slideInterval) clearInterval(slideInterval);
+            currentSlideIdx = 0;
+            slideInterval = setInterval(() => {
+                const allImgs = sliderBox.querySelectorAll('.slide-img');
+                if(!allImgs.length) return;
+                allImgs[currentSlideIdx].classList.remove('active');
+                currentSlideIdx = (currentSlideIdx + 1) % allImgs.length;
+                allImgs[currentSlideIdx].classList.add('active');
+            }, 3000);
+        }
+
+        function handleGalleryUpload(e) {
+            const files = e.target.files;
+            if(!files.length) return;
+            const db = getDB();
+            if(!db.sliderImages) db.sliderImages = [];
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    db.sliderImages.push(evt.target.result);
+                    saveDB(db);
+                    loadHomeNoticesAndSlider();
+                };
+                reader.readAsDataURL(file);
+            });
+            alert('ছবিগুলো স্লাইডারে আপলোড করা হয়েছে!');
+        }
+
+        function clearSliderImages() {
+            if(confirm('সকল ছবি মুছে ফেলতে চান?')) {
+                const db = getDB();
+                db.sliderImages = [];
+                saveDB(db);
+                loadHomeNoticesAndSlider();
+                alert('স্লাইডার খালি করা হয়েছে!');
+            }
+        }
+
+        function toggleResultPublish() {
+            const db = getDB();
+            db.isResultPublished = !db.isResultPublished;
+            saveDB(db);
+            renderAdminDashboard();
+            renderSuperDashboard();
+            alert(`ফলাফল এখন ${db.isResultPublished ? 'প্রকাশিত' : 'অপ্রকাশিত'} করা হয়েছে!`);
+        }
+
+        function switchTeacherTab(tabId) {
+            document.querySelectorAll('.teacher-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.remove('hidden');
+            event.target.classList.add('active');
+        }
+
+        let currentStudent = null;
+        function handleStudentLogin(e) {
+            e.preventDefault();
+            const cls = document.getElementById('std-login-class').value;
+            const id = document.getElementById('std-login-id').value.trim();
+            const db = getDB();
+
+            const student = db.students.find(s => s.class === cls && s.id === id);
+            if (student) {
+                currentStudent = student;
+                document.getElementById('std-profile-name').innerText = student.name;
+                document.getElementById('std-profile-info').innerText = `শ্রেণি: ${student.class} | আইডি: ${student.id} | অভিভাবক: ${student.guardian}`;
+                document.getElementById('std-attendance-status').innerText = student.attendance === 'Present' ? 'উপস্থিত' : 'অনুপস্থিত';
+                document.getElementById('std-fee-status').innerText = `${student.feeAmount || 0} ৳ (${student.feeStatus === 'Paid' ? 'পরিশোধিত' : 'বকেয়া'})`;
+                
+                document.getElementById('idcard-name').innerText = student.name;
+                document.getElementById('idcard-details').innerText = `শ্রেণি: ${student.class} | আইডি: ${student.id}`;
+                document.getElementById('idcard-phone').innerText = `মোবাইল: ${student.phone || 'N/A'}`;
+
+                if (!db.isResultPublished) {
+                    document.getElementById('std-marksheet-box').innerHTML = `
+                        <div style="padding:15px; text-align:center; color:#d97706; font-weight:bold; background:#fffbeb; border:1px solid #fcd34d; border-radius:8px;">
+                            ⏳ ফলাফল এখনো প্রকাশিত হয়নি। নম্বর মূল্যায়ন প্রক্রিয়াধীন রয়েছে।
+                        </div>
+                    `;
+                } else {
+                    let totalMarks = 0, count = 0;
+                    let marksTableHTML = `<table class="khata-table"><tr><th>বিষয়</th><th>প্রাপ্ত নম্বর</th><th>গ্রেড</th></tr>`;
+                    
+                    db.subjects.forEach((sub, idx) => {
+                        let m = student.marks && student.marks[idx] !== undefined ? student.marks[idx] : 0;
+                        totalMarks += m; count++;
+                        let g = m >= 80 ? "A+" : (m >= 70 ? "A" : (m >= 60 ? "A-" : (m >= 33 ? "Pass" : "Fail")));
+                        marksTableHTML += `<tr><td style="text-align:left;">${sub}</td><td>${m}</td><td>${g}</td></tr>`;
+                    });
+                    marksTableHTML += `</table>`;
+                    
+                    let avg = count ? (totalMarks / count).toFixed(2) : 0;
+                    let finalGrade = avg >= 80 ? "A+ (GPA 5.00)" : (avg >= 70 ? "A (GPA 4.00)" : (avg >= 60 ? "A- (GPA 3.50)" : (avg >= 33 ? "Pass (GPA 2.00)" : "Fail")));
+
+                    document.getElementById('std-marksheet-box').innerHTML = `
+                        <div style="margin-bottom:8px; font-weight:bold; color:#065f46;">মোট প্রাপ্ত নম্বর: ${totalMarks} | গড়: ${avg} | চূড়ান্ত গ্রেড: ${finalGrade}</div>
+                        ${marksTableHTML}
+                    `;
+                }
+
+                document.getElementById('std-diary-date').valueAsDate = new Date();
+                renderStudentDiary();
+                showPage('student-dashboard');
+            } else { alert('দুঃখিত! এই শ্রেণি এবং আইডি দিয়ে কোনো শিক্ষার্থী পাওয়া যায়নি।'); }
+        }
+
+        function renderStudentDiary() {
+            const date = document.getElementById('std-diary-date').value;
+            const db = getDB();
+            const key = `${currentStudent.class}_${date}`;
+            const diaryData = db.diaries[key] || {};
+            const container = document.getElementById('std-diary-list');
+            container.innerHTML = '';
+
+            db.subjects.forEach((sub, idx) => {
+                container.innerHTML += `
+                    <div style="background:#f8fafc; padding:8px; border-radius:8px; border:1px solid #e2e8f0; text-align:left;">
+                        <span style="font-size:0.75rem; font-weight:bold; color:#6d28d9; display:block;">${sub}</span>
+                        <p style="font-size:0.8rem; color:#334155;">${diaryData[idx] || "পড়া দেওয়া হয়নি"}</p>
+                    </div>
+                `;
+            });
+        }
+
+        let currentTeacher = null;
+        function handleTeacherLogin(e) {
+            e.preventDefault();
+            const id = document.getElementById('teacher-id').value.trim();
+            const pass = document.getElementById('teacher-pass').value;
+            const db = getDB();
+
+            const teacher = db.teachers.find(t => t.id === id && t.pass === pass);
+            if (teacher) {
+                currentTeacher = teacher;
+                document.getElementById('teacher-profile-name').innerText = teacher.name;
+                document.getElementById('teacher-profile-info').innerText = `আইডি: ${teacher.id} | মোবাইল: ${teacher.phone}`;
+                document.getElementById('teacher-diary-date').valueAsDate = new Date();
+                showPage('teacher-dashboard');
+            } else { alert('ভুল টিচার আইডি অথবা পাসওয়ার্ড!'); }
+        }
+
+        function handleTeacherForgot(e) {
+            e.preventDefault();
+            const id = document.getElementById('t-reset-id').value.trim();
+            const phone = document.getElementById('t-reset-phone').value.trim();
+            const newPass = document.getElementById('t-reset-newpass').value;
+            const db = getDB();
+
+            const t = db.teachers.find(x => x.id === id && x.phone === phone);
+            if (t) {
+                t.pass = newPass;
+                saveDB(db);
+                alert('পাসওয়ার্ড পরিবর্তিত হয়েছে!');
+                showPage('teacher-login-page');
+            } else { alert('তথ্য মেলেনি!'); }
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            if (document.getElementById('admin-id').value === 'admin' && document.getElementById('admin-pass').value === getDB().adminPass) {
+                renderAdminDashboard();
+                showPage('admin-dashboard');
+            } else { alert('ভুল আইডি বা পাসওয়ার্ড!'); }
+        }
+
+        function handleAdminForgot(e) {
+            e.preventDefault();
+            if (document.getElementById('admin-recovery-code').value === getDB().adminMasterCode) {
+                const db = getDB();
+                db.adminPass = document.getElementById('admin-reset-pass').value;
+                saveDB(db);
+                alert('এডমিন পাসওয়ার্ড রিসেট হয়েছে!');
+                showPage('admin-login-page');
+            } else { alert('ভুল মাস্টার কোড!'); }
+        }
+
+        function handleSuperLogin(e) {
+            e.preventDefault();
+            if (document.getElementById('super-id').value === 'super' && document.getElementById('super-pass').value === getDB().superPass) {
+                renderSuperDashboard();
+                showPage('super-dashboard');
+            } else { alert('ভুল আইডি বা পাসওয়ার্ড!'); }
+        }
+
+        function handleSuperForgot(e) {
+            e.preventDefault();
+            if (document.getElementById('super-recovery-code').value === getDB().adminMasterCode) {
+                const db = getDB();
+                db.superPass = document.getElementById('super-reset-pass').value;
+                saveDB(db);
+                alert('সুপার পাসওয়ার্ড রিসেট হয়েছে!');
+                showPage('super-login-page');
+            } else { alert('ভুল মাস্টার কোড!'); }
+        }
+
+        function markTeacherSelfAttendance() {
+            if (!currentTeacher) return;
+            const db = getDB();
+            const now = new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' });
+            
+            const existing = db.teacherLog.find(l => l.id === currentTeacher.id && l.date === new Date().toLocaleDateString());
+            if(!existing) {
+                db.teacherLog.push({ id: currentTeacher.id, name: currentTeacher.name, date: new Date().toLocaleDateString(), time: now });
+                saveDB(db);
+            }
+            alert(`ধন্যবাদ ${currentTeacher.name}! আপনার উপস্থিতি সংরক্ষিত হয়েছে (${now})।`);
+        }
+
+        function buildResultFormSubjects() {
+            const db = getDB();
+            const container = document.getElementById('res-subjects-inputs');
+            container.innerHTML = db.subjects.map((sub, idx) => `
+                <div>
+                    <label style="font-size:0.7rem; color:#475569; font-weight:bold;">${sub}</label>
+                    <input type="number" id="sub-mark-${idx}" placeholder="নম্বর" class="form-control" style="padding:4px; font-size:0.8rem;">
+                </div>
+            `).join('');
+        }
+
+        function buildTeacherSubjectEditForm() {
+            const db = getDB();
+            const container = document.getElementById('teacher-subject-edit-list');
+            container.innerHTML = db.subjects.map((sub, idx) => `
+                <div>
+                    <label style="font-size:0.7rem; color:gray;">বিষয় ${idx+1}</label>
+                    <input type="text" id="t-sub-input-${idx}" value="${sub}" class="form-control" style="padding:4px;">
+                </div>
+            `).join('');
+        }
+
+        function saveTeacherSubjects() {
+            const db = getDB();
+            db.subjects = db.subjects.map((_, idx) => {
+                return document.getElementById(`t-sub-input-${idx}`).value || `বিষয় ${idx+1}`;
+            });
+            saveDB(db);
+            alert('বিষয়সমূহের নাম সফলভাবে সেভ করা হয়েছে!');
+            buildResultFormSubjects();
+        }
+
+        function loadStudentMarksForm() {
+            const stdId = document.getElementById('res-std-id').value.trim();
+            const db = getDB();
+            const s = db.students.find(x => x.id === stdId);
+            if(s && s.marks) {
+                db.subjects.forEach((_, idx) => {
+                    const input = document.getElementById(`sub-mark-${idx}`);
+                    if(input) input.value = s.marks[idx] !== undefined ? s.marks[idx] : '';
+                });
+            }
+        }
+
+        function saveStudentResult() {
+            const stdId = document.getElementById('res-std-id').value.trim();
+            const db = getDB();
+            const s = db.students.find(x => x.id === stdId);
+            if (!s) { alert('শিক্ষার্থী পাওয়া যায়নি!'); return; }
+            
+            if(!s.marks) s.marks = {};
+            db.subjects.forEach((_, idx) => {
+                const val = parseFloat(document.getElementById(`sub-mark-${idx}`).value) || 0;
+                s.marks[idx] = val;
+            });
+            saveDB(db);
+            alert(`শিক্ষার্থী ${s.name}-এর রেজাল্ট সফলভাবে সেভ হয়েছে!`);
+        }
+
+        function updateTeacherClassView() {
+            const cls = document.getElementById('teacher-class-select').value;
+            const db = getDB();
+            const studentsInClass = db.students.filter(s => s.class === cls);
+
+            let total = studentsInClass.length;
+            let present = studentsInClass.filter(s => s.attendance === 'Present').length;
+            let absent = total - present;
+            let rate = total > 0 ? ((present / total) * 100).toFixed(1) : 0;
+
+            document.getElementById('count-total').innerText = total;
+            document.getElementById('count-present').innerText = present;
+            document.getElementById('count-absent').innerText = absent;
+            document.getElementById('count-rate').innerText = rate + '%';
+
+            const tbody = document.getElementById('teacher-khata-tbody');
+            tbody.innerHTML = studentsInClass.length ? studentsInClass.map(s => `
+                <tr>
+                    <td><b>${s.id}</b></td>
+                    <td style="text-align:left;"><b>${s.name}</b></td>
+                    <td>
+                        <button onclick="toggleAttendance('${s.id}')" class="btn btn-sm" style="background:${s.attendance==='Present'?'#059669':'#dc2626'}">
+                            ${s.attendance==='Present'?'✓ উপস্থিত':'✗ অনুপস্থিত'}
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="toggleFee('${s.id}')" class="btn btn-sm" style="background:${s.feeStatus==='Paid'?'#2563eb':'#d97706'}">
+                            ${s.feeStatus==='Paid'?'Paid':'Unpaid'}
+                        </button>
+                    </td>
+                    <td>
+                        <input type="number" value="${s.feeAmount || 0}" onchange="updateFeeDirect('${s.id}', this.value)" style="width:70px; padding:3px; text-align:center; border:1px solid #cbd5e1; border-radius:4px;"> ৳
+                    </td>
+                </tr>
+            `).join('') : '<tr><td colspan="5">এই শ্রেণিতে কোনো শিক্ষার্থী নেই</td></tr>';
+
+            const diaryContainer = document.getElementById('teacher-diary-inputs');
+            diaryContainer.innerHTML = db.subjects.map((sub, idx) => `
+                <div style="text-align:left;">
+                    <label style="font-size:0.75rem; font-weight:bold; color:#475569;">${sub}</label>
+                    <input type="text" id="t-diary-input-${idx}" placeholder="পড়া লিখুন" class="form-control" style="padding:4px; font-size:0.8rem;">
+                </div>
+            `).join('');
+        }
+
+        function markAllPresent() {
+            const cls = document.getElementById('teacher-class-select').value;
+            const db = getDB();
+            db.students.filter(s => s.class === cls).forEach(s => s.attendance = 'Present');
+            saveDB(db);
+            updateTeacherClassView();
+            alert('সবাইকে উপস্থিত করা হয়েছে!');
+        }
+
+        function toggleAttendance(id) {
+            const db = getDB();
+            const s = db.students.find(x => x.id === id);
+            if (s) { s.attendance = s.attendance === 'Present' ? 'Absent' : 'Present'; saveDB(db); updateTeacherClassView(); }
+        }
+
+        function toggleFee(id) {
+            const db = getDB();
+            const s = db.students.find(x => x.id === id);
+            if (s) { s.feeStatus = s.feeStatus === 'Paid' ? 'Unpaid' : 'Paid'; saveDB(db); updateTeacherClassView(); }
+        }
+
+        function updateFeeDirect(id, val) {
+            const db = getDB();
+            const s = db.students.find(x => x.id === id);
+            if (s) {
+                s.feeAmount = parseFloat(val) || 0;
+                saveDB(db);
+                updateTeacherClassView();
+            }
+        }
+
+        function saveTeacherDiary() {
+            const cls = document.getElementById('teacher-class-select').value;
+            const date = document.getElementById('teacher-diary-date').value;
+            if(!date) { alert('তারিখ সিলেক্ট করুন'); return; }
+            const db = getDB();
+            const key = `${cls}_${date}`;
+            db.diaries[key] = {};
+            db.subjects.forEach((_, idx) => {
+                const val = document.getElementById(`t-diary-input-${idx}`).value;
+                if(val) db.diaries[key][idx] = val;
+            });
+            saveDB(db);
+            alert('ডায়রি সেভ করা হয়েছে!');
+        }
+
+        function saveAdminNotice() {
+            const db = getDB();
+            const inputVal = document.getElementById('admin-notice-input').value.trim();
+            const editId = document.getElementById('edit-notice-id').value;
+
+            if(!inputVal) { alert('নোটিশ লিখুন!'); return; }
+
+            if(editId) {
+                const notice = db.notices.find(n => n.id == editId);
+                if(notice) {
+                    notice.text = inputVal;
+                    notice.date = new Date().toLocaleDateString('bn-BD');
+                }
+                document.getElementById('edit-notice-id').value = '';
+                document.getElementById('notice-save-btn').innerText = 'নোটিশ পোস্ট করুন';
+            } else {
+                db.notices.unshift({ id: Date.now(), text: inputVal, date: new Date().toLocaleDateString('bn-BD') });
+            }
+
+            saveDB(db);
+            renderAdminDashboard();
+            loadHomeNoticesAndSlider();
+            document.getElementById('admin-notice-input').value = '';
+            alert('নোটিশ সফলভাবে সংরক্ষিত হয়েছে!');
+        }
+
+        function editAdminNotice(id) {
+            const db = getDB();
+            const notice = db.notices.find(n => n.id == id);
+            if(notice) {
+                document.getElementById('admin-notice-input').value = notice.text;
+                document.getElementById('edit-notice-id').value = notice.id;
+                document.getElementById('notice-save-btn').innerText = 'নোটিশ আপডেট করুন';
+            }
+        }
+
+        function deleteAdminNotice(id) {
+            if(confirm('এই নোটিশটি মুছে ফেলতে চান?')) {
+                const db = getDB();
+                db.notices = db.notices.filter(n => n.id != id);
+                saveDB(db);
+                renderAdminDashboard();
+                loadHomeNoticesAndSlider();
+            }
+        }
+
+        function renderAdminDashboard() {
+            const db = getDB();
+            const isPub = db.isResultPublished;
+            document.getElementById('admin-result-status-text').innerText = isPub ? 'প্রকাশিত' : 'অপ্রকাশিত';
+            document.getElementById('admin-result-btn').innerText = isPub ? 'অপ্রকাশিত করুন' : 'প্রকাশ করুন';
+
+            document.getElementById('admin-notice-list').innerHTML = db.notices.map(n => `
+                <div class="notice-card">
+                    <div>
+                        <div style="font-weight:bold; color:#1e293b;">${n.text}</div>
+                        <div style="font-size:0.7rem; color:gray;">তারিখ: ${n.date}</div>
+                    </div>
+                    <div style="display:flex; gap:4px;">
+                        <button onclick="editAdminNotice(${n.id})" class="btn btn-blue btn-sm" style="padding:2px 6px;">এডিট</button>
+                        <button onclick="deleteAdminNotice(${n.id})" class="btn btn-red btn-sm" style="padding:2px 6px;">ডিলিট</button>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('admin-student-list').innerHTML = db.students.map(s => `
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:6px; border-radius:6px; margin-bottom:4px; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+                    <span><b>${s.name}</b> (${s.class} - আইডি: ${s.id}) - <b>${s.feeAmount||0}৳</b></span>
+                    <button onclick="adminDeleteStudent('${s.id}')" class="btn btn-red btn-sm">ডিলিট</button>
+                </div>
+            `).join('');
+        }
+
+        function renderSuperDashboard() {
+            const db = getDB();
+            const isPub = db.isResultPublished;
+            document.getElementById('super-result-status-text').innerText = isPub ? 'প্রকাশিত' : 'অপ্রকাশিত';
+            document.getElementById('super-result-btn').innerText = isPub ? 'অপ্রকাশিত করুন' : 'প্রকাশ করুন';
+
+            let totalPaid = 0, totalDue = 0;
+            db.students.forEach(s => {
+                const amt = s.feeAmount || 0;
+                if (s.feeStatus === 'Paid') totalPaid += amt;
+                else totalDue += amt;
+            });
+            document.getElementById('super-total-paid').innerText = `${totalPaid} ৳`;
+            document.getElementById('super-total-due').innerText = `${totalDue} ৳`;
+
+            const subContainer = document.getElementById('super-subject-edit-list');
+            subContainer.innerHTML = db.subjects.map((sub, idx) => `
+                <div>
+                    <label style="font-size:0.7rem; color:gray;">বিষয় ${idx+1}</label>
+                    <input type="text" id="super-sub-input-${idx}" value="${sub}" class="form-control" style="padding:4px;">
+                </div>
+            `).join('');
+
+            const tLogList = document.getElementById('super-teacher-log');
+            tLogList.innerHTML = (db.teacherLog && db.teacherLog.length) ? db.teacherLog.map(l => `
+                <div style="font-size:0.75rem; border-bottom:1px solid #e2e8f0; padding:2px 0;">
+                    🟢 <b>${l.name}</b> - সময়: ${l.time} (${l.date})
+                </div>
+            `).join('') : `<p style="font-size:0.75rem; color:gray;">আজ কোনো শিক্ষক হাজিরা দেননি।</p>`;
+
+            document.getElementById('super-teacher-list').innerHTML = db.teachers.map(t => `
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:6px; border-radius:6px; margin-bottom:4px; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+                    <span><b>${t.name}</b> (আইডি: ${t.id})</span>
+                    <button onclick="superDeleteTeacher('${t.id}')" class="btn btn-red btn-sm">ডিলিট</button>
+                </div>
+            `).join('');
+
+            document.getElementById('super-student-list').innerHTML = db.students.map(s => `
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:6px; border-radius:6px; margin-bottom:4px; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
+                    <span><b>${s.name}</b> (${s.class} - আইডি: ${s.id})</span>
+                    <button onclick="superDeleteStudent('${s.id}')" class="btn btn-red btn-sm">ডিলিট</button>
+                </div>
+            `).join('');
+        }
+
+        function saveSuperSubjects() {
+            const db = getDB();
+            db.subjects = db.subjects.map((_, idx) => {
+                return document.getElementById(`super-sub-input-${idx}`).value || `বিষয় ${idx+1}`;
+            });
+            saveDB(db);
+            alert('বিষয়সমূহের নাম সংরক্ষণ করা হয়েছে!');
+        }
+
+        function adminAddStudent(e) {
+            e.preventDefault();
+            const db = getDB();
+            db.students.push({
+                name: document.getElementById('admin-std-name').value,
+                id: document.getElementById('admin-std-id').value,
+                class: document.getElementById('admin-std-class').value,
+                guardian: document.getElementById('admin-std-guardian').value,
+                phone: document.getElementById('admin-std-phone').value,
+                feeAmount: parseFloat(document.getElementById('admin-std-feeamount').value) || 0,
+                attendance: "Present", feeStatus: "Unpaid", marks: {}
+            });
+            saveDB(db);
+            alert('শিক্ষার্থী যুক্ত হয়েছে!');
+            renderAdminDashboard();
+            e.target.reset();
+        }
+
+        function adminDeleteStudent(id) {
+            if (confirm('মুছে ফেলতে চান?')) {
+                const db = getDB();
+                db.students = db.students.filter(s => s.id !== id);
+                saveDB(db);
+                renderAdminDashboard();
+            }
+        }
+
+        function superAddTeacher(e) {
+            e.preventDefault();
+            const db = getDB();
+            db.teachers.push({
+                name: document.getElementById('super-t-name').value,
+                id: document.getElementById('super-t-id').value,
+                phone: document.getElementById('super-t-phone').value,
+                pass: document.getElementById('super-t-pass').value
+            });
+            saveDB(db);
+            alert('শিক্ষক যুক্ত হয়েছে!');
+            renderSuperDashboard();
+            e.target.reset();
+        }
+
+        function superDeleteTeacher(id) {
+            if(confirm('মুছে ফেলতে চান?')) {
+                const db = getDB();
+                db.teachers = db.teachers.filter(t => t.id !== id);
+                saveDB(db);
+                renderSuperDashboard();
+            }
+        }
+
+        function superDeleteStudent(id) {
+            if(confirm('শিক্ষার্থীকে মুছে ফেলতে চান?')) {
+                const db = getDB();
+                db.students = db.students.filter(s => s.id !== id);
+                saveDB(db);
+                renderSuperDashboard();
+            }
+        }
+
+        // অ্যাপ চালু করার সময় ডাটাবেজ লোড করার ফাংশন কল
+        initDB();
+    </script>
+</body>
+</html>
